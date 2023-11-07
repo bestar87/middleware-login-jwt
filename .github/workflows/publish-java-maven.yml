@@ -3,6 +3,17 @@ on: push
 jobs:
   publish:
     runs-on: ubuntu-latest 
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_USERNAME: root
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: jwt_authentication_26oct
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
+   
     permissions: 
       contents: read
       packages: write 
@@ -15,4 +26,7 @@ jobs:
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: 3306
+          MYSQL_ROOT_PASSWORD: root
           GITHUB_TOKEN: ${{ secrets.JAVA_TOKEN }}
