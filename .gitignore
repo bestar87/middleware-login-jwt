@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+database.user=root
+database.password=root
+database.url=jdbc:mysql://localhost:3306/jwt_authentication_26oct
