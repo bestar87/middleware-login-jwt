@@ -40,6 +40,6 @@ public class SecurityConfiguration {
         return http.getSharedObject(AuthenticationManagerBuilder.class)
                 .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder)
-                .and().build();
+                .build();
     }
 }
