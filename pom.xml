@@ -21,7 +21,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/bestar87/middleware-login-jwt/com/example/Lcustom-login-library-using-jwt</url>
+			<url>https://maven.pkg.github.com/bestar87/middleware-login-jwt</url>
 		</repository>
 
 	</distributionManagement>
